@@ -79,6 +79,18 @@ log_info "Введите свой PRIVATE_KEY_LOCAL:"
 read -p "PRIVATE_KEY_LOCAL: " PRIVATE_KEY_LOCAL
 
 # =============================
+# Запрос RPC для разных сетей
+# =============================
+log_info "Введите RPC для arbitrum-sepolia:"
+read -p "RPC for arbitrum-sepolia: " RPC_ARBITRUM
+log_info "Введите RPC для base-sepolia:"
+read -p "RPC for base-sepolia: " RPC_BASE
+log_info "Введите RPC для blast-sepolia:"
+read -p "RPC for blast-sepolia: " RPC_BLAST
+log_info "Введите RPC для optimism-sepolia:"
+read -p "RPC for optimism-sepolia: " RPC_OPTIMISM
+
+# =============================
 # Создание сервисного файла
 # =============================
 log_info "Создаем systemd сервисный файл..."
@@ -99,6 +111,10 @@ Environment="PRIVATE_KEY_LOCAL=$PRIVATE_KEY_LOCAL"
 Environment="EXECUTOR_MAX_L3_GAS_PRICE=1100"
 Environment="ENABLED_NETWORKS=arbitrum-sepolia,base-sepolia,blast-sepolia,optimism-sepolia,l1rn"
 Environment="EXECUTOR_PROCESS_PENDING_ORDERS_FROM_API=false"
+Environment="RPC_ENDPOINTS_ARBITRUM=$RPC_ARBITRUM"
+Environment="RPC_ENDPOINTS_BASE=$RPC_BASE"
+Environment="RPC_ENDPOINTS_BLAST=$RPC_BLAST"
+Environment="RPC_ENDPOINTS_OPTIMISM=$RPC_OPTIMISM"
 Environment="RPC_ENDPOINTS_L1RN=https://brn.calderarpc.com/"
 Restart=always
 RestartSec=5
