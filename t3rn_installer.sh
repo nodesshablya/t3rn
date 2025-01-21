@@ -48,7 +48,7 @@ mkdir t3rn
 cd t3rn || { log_error "Не удалось перейти в директорию t3rn."; exit 1; }
 
 log_info "Скачиваем последний релиз..."
-curl -s https://api.github.com/repos/t3rn/executor-release/releases/releases/tag/v0.41.0 | \
+curl -s https://api.github.com/repos/t3rn/executor-release/releases/tag/v0.41.0 | \
 grep -Po '"tag_name": "\K.*?(?=")' | \
 xargs -I {} wget https://github.com/t3rn/executor-release/releases/download/{}/executor-linux-{}.tar.gz || {
   log_error "Не удалось скачать релиз."; exit 1;
