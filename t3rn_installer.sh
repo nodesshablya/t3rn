@@ -44,18 +44,16 @@ log_info "Начало установки T3RN Node Installer"
 # Создание папки и скачивание релиза
 # =============================
 log_info "Создаем директорию для установки..."
-mkdir t3rn
+mkdir -p t3rn
 cd t3rn || { log_error "Не удалось перейти в директорию t3rn."; exit 1; }
 
 log_info "Скачиваем последний релиз..."
-curl -s https://api.github.com/repos/t3rn/executor-release/releases/tag/v0.41.0 | \
-grep -Po '"tag_name": "\K.*?(?=")' | \
-xargs -I {} wget https://github.com/t3rn/executor-release/releases/download/{}/executor-linux-{}.tar.gz || {
+wget https://github.com/t3rn/executor-release/releases/download/v0.41.0/executor-linux-v0.41.0.tar.gz || {
   log_error "Не удалось скачать релиз."; exit 1;
 }
 
 log_info "Распаковываем архив..."
-tar -xzf executor-linux-*.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
+tar -xzf executor-linux-v0.41.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
 
 log_info "Переходим в директорию бинарных файлов..."
 cd executor/executor/bin || { log_error "Не удалось перейти в директорию бинарных файлов."; exit 1; }
