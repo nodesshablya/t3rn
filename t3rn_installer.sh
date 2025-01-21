@@ -53,7 +53,7 @@ wget https://github.com/t3rn/executor-release/releases/download/v0.43.0/executor
 }
 
 log_info "Распаковываем архив..."
-tar -xzf executor-linux-v0.41.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
+tar -xzf executor-linux-v0.43.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
 
 log_info "Переходим в директорию бинарных файлов..."
 cd executor/executor/bin || { log_error "Не удалось перейти в директорию бинарных файлов."; exit 1; }
