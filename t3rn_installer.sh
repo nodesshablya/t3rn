@@ -47,13 +47,13 @@ log_info "Создаем директорию для установки..."
 mkdir t3rn
 cd t3rn || { log_error "Не удалось перейти в директорию t3rn."; exit 1; }
 
-log_info "Скачиваем релиз версии v0.41.0..."
-wget https://github.com/t3rn/executor-release/releases/download/v0.43.0/executor-linux-v0.43.0.tar.gz || {
-  log_error "Не удалось скачать релиз версии v0.41.0."; exit 1;
+log_info "Скачиваем релиз версии v0.44.0..."
+wget https://github.com/t3rn/executor-release/releases/download/v0.44.0/executor-linux-v0.44.0.tar.gz || {
+  log_error "Не удалось скачать релиз версии v0.44.0."; exit 1;
 }
 
 log_info "Распаковываем архив..."
-tar -xzf executor-linux-v0.43.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
+tar -xzf executor-linux-v0.44.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
 
 log_info "Переходим в директорию бинарных файлов..."
 cd executor/executor/bin || { log_error "Не удалось перейти в директорию бинарных файлов."; exit 1; }
@@ -108,7 +108,7 @@ Environment="EXECUTOR_PROCESS_ORDERS=true"
 Environment="EXECUTOR_PROCESS_CLAIMS=true"
 Environment="ENABLED_NETWORKS=arbitrum-sepolia,base-sepolia,blast-sepolia,optimism-sepolia,l1rn"
 Environment="EXECUTOR_PROCESS_PENDING_ORDERS_FROM_API=false"
-Environment="EXECUTOR_MAX_L3_GAS_PRICE=500"
+Environment="EXECUTOR_MAX_L3_GAS_PRICE=850"
 Environment="EXECUTOR_ENABLE_BATCH_BIDDING=false"
 Environment="PRIVATE_KEY_LOCAL=$PRIVATE_KEY_LOCAL"
 Environment="ENABLED_NETWORKS=arbitrum-sepolia,base-sepolia,blast-sepolia,optimism-sepolia,l1rn"
