@@ -47,13 +47,13 @@ log_info "Создаем директорию для установки..."
 mkdir t3rn
 cd t3rn || { log_error "Не удалось перейти в директорию t3rn."; exit 1; }
 
-log_info "Скачиваем релиз версии v0.44.0..."
-wget https://github.com/t3rn/executor-release/releases/download/v0.44.0/executor-linux-v0.44.0.tar.gz || {
-  log_error "Не удалось скачать релиз версии v0.44.0."; exit 1;
+log_info "Скачиваем релиз версии v0.46.0..."
+wget https://github.com/t3rn/executor-release/releases/download/v0.44.0/executor-linux-v0.46.0.tar.gz || {
+  log_error "Не удалось скачать релиз версии v0.46.0."; exit 1;
 }
 
 log_info "Распаковываем архив..."
-tar -xzf executor-linux-v0.44.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
+tar -xzf executor-linux-v0.46.0.tar.gz || { log_error "Ошибка при распаковке архива."; exit 1; }
 
 log_info "Переходим в директорию бинарных файлов..."
 cd executor/executor/bin || { log_error "Не удалось перейти в директорию бинарных файлов."; exit 1; }
