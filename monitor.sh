@@ -90,7 +90,7 @@ function recap() {
         brnFirstBal=${brnBal}
         
         while sleep 3600; do
-            ipAddr=$(curl -s ifconfig.me | sed "s/\./\\\./g")
+            ipAddr=$(curl -s https://api.ipify.org)
             status=$(ps aux | grep -c executor)
             
             if [ $status -gt 1 ]; then
