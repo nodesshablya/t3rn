@@ -48,7 +48,7 @@ mkdir t3rn
 cd t3rn || { log_error "Не удалось перейти в директорию t3rn."; exit 1; }
 
 log_info "Скачиваем релиз версии v0.48.0..."
-wget https://github.com/t3rn/executor-release/releases/download/v0.47.0/executor-linux-v0.48.0.tar.gz || {
+wget https://github.com/t3rn/executor-release/releases/download/v0.48.0/executor-linux-v0.48.0.tar.gz || {
   log_error "Не удалось скачать релиз версии v0.48.0."; exit 1;
 }
 
